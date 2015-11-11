@@ -1,7 +1,7 @@
 {% include header.html %}
 
 <div class="sub-container container-fluid">
-    <div class="row section">
+    <div class="row">
         <div class="cell cell-lg">
             {{ content }}
             <div id="loader">
@@ -16,14 +16,31 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="panel-group" id="list-of-talks" role="tablist" aria-multiselectable="true" aria-live="polite">
-                    </div>
+            <div class="clearfix"></div>
+            {% if page.skinny == 1 %}
+            <div class="row ajax-content">
+                <div class="col-xs-12 col-sm-4" id="list-of-talks-1">
+                </div>
+                <div class="col-xs-12 col-sm-4" id="list-of-talks-2">
+                </div>
+                <div class="col-xs-12 col-sm-4" id="list-of-talks-3">
                 </div>
             </div>
+            {% endif %}
         </div>
     </div>
 </div>
+{% if page.skinny == 0 %}
+<div class="container-fluid">
+    <div class="row-fluid ajax-content">
+        <div class="col-xs-12 col-sm-4" id="list-of-talks-1">
+        </div>
+        <div class="col-xs-12 col-sm-4" id="list-of-talks-2">
+        </div>
+        <div class="col-xs-12 col-sm-4" id="list-of-talks-3">
+        </div>
+    </div>
+</div>
+{% endif %}
 
 {% include footer.html %}
